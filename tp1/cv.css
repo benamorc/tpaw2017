@@ -1,0 +1,27 @@
+body{
+	background-color: grey;
+}
+table {
+	width:100%;
+	border-radius:5px;
+	border-style: solid;
+	border-color: blue;
+	background: white;
+}
+h1{
+	background-color: rgb(177,255,20)
+}
+h2 {
+	color: black;
+	font-style: italic;
+	font-weight: bold;
+}
+td{
+	text-align:left;
+} 
+.introduction{
+	color:blue;
+}
+img {
+	height: 50px;
+}
