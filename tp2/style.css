@@ -1,0 +1,26 @@
+#error{
+	background:red;
+	 border-width:1px;
+     border-style:solid; 
+     border-color:black;
+     width:50%;
+	 padding:5px;
+}
+
+body{
+	background:gray;
+}
+
+table{
+	
+	background:white;
+}
+#resultat{
+	background:green;
+	 border-width:1px;
+     border-style:solid; 
+     border-color:black;
+	 color:white;
+     width:50%;
+	 padding:5px;
+}

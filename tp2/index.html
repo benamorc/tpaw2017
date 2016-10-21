@@ -1,23 +1,49 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP2</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head> 
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="formulaire.js"></script>
+		<title> Formulaire </title>
+	</head>
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="js/main.js"></script>-->
-    </head>
-    <body>        
-        <h1>tp2</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+	<body>
+		<h1> <left> <b> Saisie d'une fiche "Personne" </b> </left>
+		<br/><br/>
+	<form>
+		<table>
+			<tr>
+				<td> Nom : </td> 
+				<td><input type="text" name="Nom" id="nom" /></td>
+			<tr>
+				<td> Prénom: </td>
+				<td><input type="text" name="Prenom" id="prenom"></td>
+			</tr>
+			<tr>
+				<td> Sexe: </td>
+				<td>
+					<input type="radio" name="Sexe" id="sexe" /> Homme
+					<input type="radio" name="Sexe" id="sexe" /> Femme
+				</td>
+			</tr>
+			<tr>
+				<td> Date de naissance: </td>
+				<td><input type="date" placeholder="JJ/MM/AAAA" id="date_naissance" /></td>
+			</tr>
+			<tr>
+				<td> Adresse: </td>
+				<td><input type="text" name="Adresse" id="adresse" /></td>
+			</tr>
+			<tr>
+				<td> Email: </td>
+				<td><input type="text" name="Email" maxlength="60" id="email" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type ="button" value="Valider" onclick="validation();"/></td>
+		</table>
+		<div id="err"></div>
+		<div id="resultat"></div>
+	</form>
+	</body>
 </html>
