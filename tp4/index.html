@@ -1,23 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP4</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>TP4</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>		
+		<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="formulaire.js"></script>
+		<title> Formulaire </title>
+	</head>
+	<body>
+		<h1> <left> <b> TP4 AW - Formulaire </b> </left> </h1>
+		<br/><br/>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="nom" class="col-sm-2 control-label"> Nom </label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="nom" placeholder="Votre nom">
+				</div>
+				<div class="col-sm-2 keyCount">car.</div>
+			</div>
+			<div class="form-group">
+				<label for="prenom" class="col-sm-2 control-label"> Prénom </label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
+				</div>
+				<div class="col-sm-2 keyCount">car.</div>
+			</div>
+			<div class="form-group">
+				<label for="date_naissance" class="col-sm-2 control-label"> Date de naissance </label>
+				<div class="col-sm-4">
+					<input type="date" class="form-control" id="date_naissance" placeholder="JJ/MM/AAAA">
+				</div>
+				<div class="col-sm-2 keyCount">car.</div>
+			</div>
+			<div class="form-group">
+				<label for="adress" class="col-sm-2 control-label"> Adresse </label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="address" placeholder="Votre adresse">
+				</div>
+				<div class="col-sm-2 keyCount">car.</div>
+				<button type="button" class="btn btn-info" id="map" value="GPS" onclick="getLocation();">GPS</button>
+				<div id="demo"></div>
+			</div>
+			<div class="form-group">
+				<label for="email" class="col-sm-2 control-label"> Email </label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="email" placeholder="abc@example.com">
+				</div>
+				<div class="col-sm-2 keyCount">car.</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="checkbox">
+						<label><input type="checkbox"> Remember me	</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" class="btn btn-default" id="submitform"> Valider </button>
+				</div>
+			</div>
+			<div id="monDiv"></div>
+			<div class="error"></div>
+			<div class="modal fade" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title"> Titre modal </h4>
+				  </div>
+				  <div class="modal-body">
+					<p>Veuillez remplir tous les champs SVP&hellip;</p>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</form>
+	</body>
 </html>
