@@ -23,31 +23,13 @@
 					</div>
 				</div>
 			</div>
-			<div id="result"></div>
-        <center>
-					</br>
-						<div id="nom"></div>
-						<div id="hr"></div>
-					</br>
-						<img src="" id ="icon"/>
-					</br>
-						<div id="temp"></div>
-						<div id="hr1"></div>
-					</br>
-						<div id="hum"></div>
-						<div id="hr2"></div>
-					</br>
-						<div id="cloud"></div>
-						<div id="hr3"></div>
-					</br>
-						<div id="wind"></div>
-						<div id="hr4"></div>
-					</br>
-						<div id="map"></div>
-						<div id="hr5"></div>
-					</br>
-						<div id="mapholder"></div>
-				</center>
+			<div ng-if="meteo">
+				{{meteo.name}}
+				<img src="http://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png" />
+				<h3> {{meteo.main.temp | number:0}}°</h3>
+				{{meteo.weather[0].description}}
+				</div>
+				<p ng-if="errorMsg"> {{errorMsg}} </p>
 			
 		</form>
 	</body>
