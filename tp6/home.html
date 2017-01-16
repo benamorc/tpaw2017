@@ -28,8 +28,8 @@
 				<img src="http://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png" />
 				<h3> {{meteo.main.temp | number:0}}°</h3>
 				{{meteo.weather[0].description}}
-				</div>
-				<p ng-if="errorMsg"> {{errorMsg}} </p>
+			</div>
+			<p ng-if="errorMsg"> {{errorMsg}} </p>
 			
 		</form>
 	</body>
