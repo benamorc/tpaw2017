@@ -31,11 +31,25 @@
     {{meteo.weather[0].description}}
 </div>
 
-<table  border="1">
-    <tr ng-repeat="item in forecast.list">
-        <td>{{item.dt}}</td>
-        <td>{{item.main.temp}}</td>
-    </tr>
-</table>
+<div ng-show="forecast">
+    <h1> forecasts</h1>
+    <div class="row">
+        <table class="table">
+            <tr>
+                <td class="center">
+                    <span> city : {{ forecast.city.name}}</span>
+                </td>
+            </tr>
+            <tr ng-repeat="list in forecast.list">
+                <td class="center">
+                    <img src="https://openweathermap.org/img/w/{{list.weather[0].icon }}.png"> <span>  {{ list.main.temp}}°</span>
+                </td>
+                <td class="center">
+                    <span> date : {{ list.dt_txt}}</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 
 <p ng-if="errorMsg"> {{errorMsg}} </p>
