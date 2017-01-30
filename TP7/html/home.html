@@ -18,8 +18,8 @@
     <!-- TP7 : ici, on gère l’affichage des messages d’erreur  selon l’état du champ de saisie !-->
     <div ng-messages="myForm.city.$error" role="alert">
 	    <div ng-message="required" class="label label-danger">Veuillez saisir une ville SVP</div>
-	    <div ng-message="minlengh">Le texte saisi est trop court (3 car. minimum)</div>
-	    <div ng-message="maxlengh">Le texte saisi est trop long (20 car. maximum)</div>
+	    <div ng-message="minlength" class="label label-danger">Le texte saisi est trop court (3 car. minimum)</div>
+	    <div ng-message="maxlength" class="label label-danger">Le texte saisi est trop long (20 car. maximum)</div>
    </div>
 	
 </form>
