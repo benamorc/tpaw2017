@@ -55,7 +55,7 @@
                     <img src="https://openweathermap.org/img/w/{{list.weather[0].icon }}.png"> <span>  {{ list.main.temp}}°</span>
                 </td>
                 <td class="center">
-                    <span> date : {{ list.dt_txt}}</span>
+                    <span> {{list.dt*1000  | date:'EEEE  HH:mm'}}</span>
                 </td>
             </tr>
         </table>
