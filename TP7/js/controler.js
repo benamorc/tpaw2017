@@ -6,7 +6,7 @@ meteoControllers.controller('MainController', ['$scope', '$http',
 	$scope.recherche = function() {
         $scope.errorMsg =  "";
         /* appel AJAX à l’API openweathermap */	    
-$http.get('https://demo.bilelz.fr/owmap/?q='+$scope.city+'&units=metric&appid=0ada432b59deb9716c357092c5f79be6') /* mettre votre API id */
+$http.get('https://demo.bilelz.fr/owmap/forecast/?q='+$scope.city+'&units=metric&appid=0ada432b59deb9716c357092c5f79be6') /* mettre votre API id */
 	    	 .success(function(data) {
 	    		/* on met dans l’objet meteo les données retournées par openweathermap */
 	    		 $scope.meteo = data;
@@ -40,7 +40,7 @@ $http.get('https://demo.bilelz.fr/owmap/forecast/?q='+$scope.city+'&units=metric
     function showPosition(position) {
         $scope.errorMsg =  "";
         /* appel AJAX à l’API openweathermap */	    
-        $http.get('https://demo.bilelz.fr/owmap/?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&units=metric&appid=0ada432b59deb9716c357092c5f79be6') /* mettre votre API id */
+        $http.get('https://demo.bilelz.fr/owmap/forecast/?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&units=metric&appid=0ada432b59deb9716c357092c5f79be6') /* mettre votre API id */
             .success(function(data) {
                 /* on met dans l’objet meteo les données retournées par openweathermap */
                 $scope.meteo = data;
