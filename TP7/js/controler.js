@@ -20,7 +20,7 @@ $http.get('https://demo.bilelz.fr/owmap/forecast/?q='+$scope.city+'&units=metric
 		
 		// appel AJAX pour recevoir les données des 5 prochaines jours	
 $http.get('https://demo.bilelz.fr/owmap/forecast/?q='+$scope.city+'&units=metric&appid=f629597651fec6baad6c6287b0230c78')
-		success(function(data) {
+		.success(function(data) {
 		    		 $scope.forecast = data;
 		    	 }).error(function(data) {
 		    		 $scope.loadingMsg = "Erreur pour les données sur 5 jours...";
@@ -39,11 +39,23 @@ $http.get('https://demo.bilelz.fr/owmap/forecast/?q='+$scope.city+'&units=metric
 
     function showPosition(position) {
         $scope.errorMsg =  "";
+	    $http.get('https://demo.bilelz.fr/owmap/?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&units=metric&appid=f629597651fec6baad6c6287b0230c78') /* mettre votre API id */
+	    	 .success(function(data) {
+	    		/* on met dans l’objet meteo les données retournées par openweathermap */
+	    		 $scope.meteo = data;
+                 if(data == ""){
+                    $scope.errorMsg =  "Pas de résultat pour votre recherche..."; 
+                 }
+	    	 }).error(function(data) {
+	    		/* en cas d’erreur */
+	    		 $scope.errorMsg =  "Hum. Error... please retry.";
+	    	 });
+	    
         /* appel AJAX à l’API openweathermap */	    
         $http.get('https://demo.bilelz.fr/owmap/forecast/?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&units=metric&appid=f629597651fec6baad6c6287b0230c78') /* mettre votre API id */
             .success(function(data) {
                 /* on met dans l’objet meteo les données retournées par openweathermap */
-                $scope.meteo = data;
+                $scope.forecast = data;
                 if(data == ""){
                 $scope.errorMsg =  "Pas de résultat pour votre recherche..."; 
                 }
