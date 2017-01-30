@@ -31,4 +31,13 @@
     {{meteo.weather[0].description}}
 </div>
 
+<div ng-if="forecast" class="text-center">
+	<h2>{{forecast.list}}</h2>
+	<img ng-src="https://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png" alt="" />
+	<h3>{{meteo.main.temp | number:0}}°</h3>
+    {{meteo.weather[0].description}}
+	
+</div>
+
 <p ng-if="errorMsg"> {{errorMsg}} </p>
+<p ng-if="forecast"> {{forecast}} </p>
