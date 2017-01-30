@@ -31,6 +31,16 @@
     {{meteo.weather[0].description}}
 </div>
 
+<p ng-if="errorMsg"> {{errorMsg}} </p>
+
+<div class="row">
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <img ng-src="https://maps.googleapis.com/maps/api/staticmap?markers={{meteo.coord.lat}},{{meteo.coord.lon}}&size=640x400&zoom=5" id="googleMarker" />
+        </div>
+    </div>
+</div>
+
 <div ng-show="forecast">
     <h1> forecasts</h1>
     <div class="row">
@@ -52,4 +62,4 @@
     </div>
 </div>
 
-<p ng-if="errorMsg"> {{errorMsg}} </p>
+
