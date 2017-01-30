@@ -17,6 +17,16 @@ $http.get('https://demo.bilelz.fr/owmap/?q='+$scope.city+'&units=metric&appid=0a
 	    		/* en cas d’erreur */
 	    		 $scope.errorMsg =  "Hum. Error... please retry.";
 	    	 });
+		
+		// appel AJAX pour recevoir les données des 5 prochaines jours	
+$http.get('https://demo.bilelz.fr/owmap/forecast/?q='+$scope.city+'&units=metric&lang=fr&appid=0ada432b59deb9716c357092c5f79be6')
+		success(function(data) {
+		    		 $scope.forecast = data;
+		    	 }).error(function(data) {
+		    		 $scope.loadingMsg = "Erreur pour les données sur 5 jours...";
+		    	 });
+
+
 	}
 
 	$scope.gps = function() {
